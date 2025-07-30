@@ -1,7 +1,7 @@
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 
 import AppLayout from "./layouts/app-layout";
-
+import ProtectedRoute from "./components/protected-route";
 import { ThemeProvider } from "./components/theme-provider";
 
 import LandingPage from "./pages/landing";
@@ -25,49 +25,49 @@ const router = createBrowserRouter([
       {
         path: "/onboarding",
         element: (
-          
+          <ProtectedRoute>
             <Onboarding />
-        
+          </ProtectedRoute>
         ),
       },
       {
         path: "/jobs",
         element: (
-          
+          <ProtectedRoute>
             <JobListing />
-       
+          </ProtectedRoute>
         ),
       },
       {
         path: "/post-job",
         element: (
-      
+          <ProtectedRoute>
             <PostJob />
-         
+          </ProtectedRoute>
         ),
       },
       {
         path: "/my-jobs",
         element: (
-         
+          <ProtectedRoute>
             <MyJobs />
-      
+          </ProtectedRoute>
         ),
       },
       {
-        path: "/saved-jobs",
+        path: "/saved-job",
         element: (
-        
+          <ProtectedRoute>
             <SavedJobs />
-        
+          </ProtectedRoute>
         ),
       },
       {
         path: "/job/:id",
         element: (
-          
+          <ProtectedRoute>
             <JobPage />
-        
+          </ProtectedRoute>
         ),
       },
     ],
