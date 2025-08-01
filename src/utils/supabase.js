@@ -1,18 +1,25 @@
-import { createClient } from '@supabase/supabase-js';
+import { createClient } from "@supabase/supabase-js";
 
-const supabaseUrl = import.meta.env.VITE_SUPABASE_URL;
-const supabaseKey = import.meta.env.VITE_SUPABASE_ANON_KEY;
+export const supabaseUrl = import.meta.env.VITE_SUPABASE_URL;
 
-const supabaseClient = async(supabaseAccessToken)=> {
-    const supabase = createClient(supabaseUrl, supabaseKey, {
-          global:{
-            headers:{
-                Authorization:'Bearer ${supabaseAccessToken}',
-            },
-          },
-});
-return supabase;
+const supabaseAnonKey = import.meta.env.VITE_SUPABASE_ANON_KEY;
+
+/**
+ * Creates a Supabase client instance
+ * @param {string} [supabaseAccessToken] - JWT from Clerk session.getToken()
+ * @returns {object} Supabase client
+ */
+const supabaseClient = async (supabaseAccessToken) => {
+  const supabase = createClient(supabaseUrl, supabaseAnonKey, {
+    global: {
+      headers: {
+      
+        ...(supabaseAccessToken && { Authorization: `Bearer ${supabaseAccessToken}` }),
+      },
+    },
+  });
+
+  return supabase;
 };
 
 export default supabaseClient;
-        

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Carousel, CarouselContent, CarouselItem } from "@/components/ui/carousel";
@@ -12,6 +12,10 @@ import { useUser } from "@clerk/clerk-react";
 const LandingPage = () => {
   const { isSignedIn } = useUser();
   const navigate = useNavigate();
+
+  // ✅ Newsletter state
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
 
   const handleFindJobs = () => {
     if (!isSignedIn) {
@@ -29,9 +33,23 @@ const LandingPage = () => {
     }
   };
 
+  // ✅ Newsletter subscription handler
+  const handleSubscribe = () => {
+    if (!email || !email.includes("@")) {
+      setMessage("⚠️ Please enter a valid email address.");
+      return;
+    }
+
+    let savedEmails = JSON.parse(localStorage.getItem("subscribedEmails") || "[]");
+    savedEmails.push(email);
+    localStorage.setItem("subscribedEmails", JSON.stringify(savedEmails));
+
+    setMessage("✅ Thank you! You'll receive updates soon.");
+    setEmail("");
+  };
+
   return (
     <main className="flex flex-col gap-16 py-12 sm:gap-24 sm:py-20">
-      
       {/* HERO SECTION */}
       <section className="px-4 text-center">
         <h1 className="text-4xl font-extrabold leading-tight tracking-tighter gradient-title sm:text-6xl lg:text-7xl">
@@ -50,17 +68,6 @@ const LandingPage = () => {
             Hire Talent
           </Button>
         </div>
-
-        <div className="flex justify-center mt-6">
-          <div className="flex items-center w-full max-w-xl px-4 py-3 text-gray-800 bg-white rounded-lg shadow-md">
-            <input
-              type="text"
-              placeholder="Search jobs, titles, or keywords..."
-              className="flex-grow text-sm bg-transparent outline-none sm:text-base"
-            />
-            <Button variant="blue">Search</Button>
-          </div>
-        </div>
       </section>
 
       {/* TRUSTED COMPANIES */}
@@ -68,10 +75,7 @@ const LandingPage = () => {
         <h2 className="mb-4 text-xl font-semibold text-gray-300">
           Trusted by top companies
         </h2>
-        <Carousel
-          plugins={[Autoplay({ delay: 2000 })]}
-          className="w-full py-6"
-        >
+        <Carousel plugins={[Autoplay({ delay: 2000 })]} className="w-full py-6">
           <CarouselContent className="flex items-center gap-8 sm:gap-20">
             {companies.map(({ name, id, path }) => (
               <CarouselItem key={id} className="basis-1/3 lg:basis-1/6">
@@ -145,9 +149,17 @@ const LandingPage = () => {
               <p className="mb-3 text-gray-400">
                 Learn how to impress recruiters and land your dream job.
               </p>
-              <a href="/blog/interview-tips" className="text-blue-400 hover:underline">Read More →</a>
+              <a
+                href="https://resumegenius.com/blog/interview/interview-tips?msockid=23996cafd2196ec53e9e7f4dd3eb6fc7"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-blue-400 hover:underline"
+              >
+                Read More →
+              </a>
             </CardContent>
           </Card>
+
           <Card className="transition hover:shadow-lg">
             <CardHeader>
               <CardTitle>How to Write a Winning Resume</CardTitle>
@@ -156,9 +168,17 @@ const LandingPage = () => {
               <p className="mb-3 text-gray-400">
                 Stand out from other applicants with a professional resume.
               </p>
-              <a href="/blog/winning-resume" className="text-blue-400 hover:underline">Read More →</a>
+              <a
+                href="https://www.indeed.com/career-advice/resumes-cover-letters/winning-resumes"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-blue-400 hover:underline"
+              >
+                Read More →
+              </a>
             </CardContent>
           </Card>
+
           <Card className="transition hover:shadow-lg">
             <CardHeader>
               <CardTitle>Remote Work Best Practices</CardTitle>
@@ -167,13 +187,18 @@ const LandingPage = () => {
               <p className="mb-3 text-gray-400">
                 Discover tips to stay productive while working from home.
               </p>
-              <a href="/blog/remote-work" className="text-blue-400 hover:underline">Read More →</a>
+              <a
+                href="https://remote.com/blog/remote-work/remote-work-best-practices"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-blue-400 hover:underline"
+              >
+                Read More →
+              </a>
             </CardContent>
           </Card>
         </div>
       </section>
-
-      
 
       {/* FAQ */}
       <section className="px-4">
@@ -188,32 +213,40 @@ const LandingPage = () => {
         </Accordion>
       </section>
 
-      
-      {/* NEWSLETTER SIGNUP */}
+      {/* ✅ NEWSLETTER SIGNUP with working logic */}
       <section className="py-16 mx-4 text-center rounded-lg shadow-lg bg-gradient-to-r from-blue-500 to-purple-600">
         <h2 className="mb-3 text-3xl font-bold text-white">
           Stay Ahead in Your Career Journey 🚀
         </h2>
-        <p className="mb-6 text-blue-100">
+        <p className="px-2 mb-6 text-blue-100 sm:px-0">
           Subscribe to get the latest job updates, tips, and hiring opportunities straight to your inbox.
         </p>
 
-        <div className="flex flex-col justify-center max-w-2xl gap-4 mx-auto sm:flex-row">
+        <div className="flex flex-col items-center justify-center max-w-2xl gap-4 mx-auto sm:flex-row sm:px-2">
           <input
             type="email"
             placeholder="Enter your email address"
-            className="flex-grow px-5 py-3 text-gray-800 rounded-full focus:outline-none"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            className="w-full px-5 py-3 text-sm text-gray-800 rounded-full sm:flex-1 focus:outline-none sm:text-base"
           />
           <Button
             variant="destructive"
             size="lg"
-            className="text-black transition bg-yellow-400 rounded-full hover:bg-yellow-500"
+            onClick={handleSubscribe}
+            className="w-full text-black transition bg-yellow-400 rounded-full sm:w-auto hover:bg-yellow-500"
           >
             Subscribe
           </Button>
         </div>
 
-        <p className="mt-3 text-xs text-blue-100">
+        {message && (
+          <p className="px-4 mt-3 text-sm font-medium text-yellow-200 sm:px-0">
+            {message}
+          </p>
+        )}
+
+        <p className="px-4 mt-3 text-xs text-blue-100 sm:px-0">
           We respect your privacy. Unsubscribe anytime.
         </p>
       </section>
@@ -222,4 +255,3 @@ const LandingPage = () => {
 };
 
 export default LandingPage;
-
