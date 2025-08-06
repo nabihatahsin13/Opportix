@@ -1,6 +1,8 @@
 # Opportix 🧭  
 **Your gateway to opportunity.**
 
+🔗 **Live Demo:** [https://opportix-crrc.vercel.app](https://opportix-crrc.vercel.app)
+
 Opportix is a full-featured job portal designed to connect job seekers with career opportunities and give recruiters the tools they need to find top talent. Built using React.js, Tailwind CSS, Supabase, Clerk, and ShadCN UI — Opportix is fast, scalable, and beautifully designed.
 
 
@@ -45,7 +47,7 @@ Supabase is an open-source Backend-as-a-Service (BaaS) that provides:
 
 **In Opportix, Supabase is used for:**
 
-- Storing job listings, applications, and blog posts  
+- Storing job listings and applications 
 - Uploading and serving resume files
 
 
