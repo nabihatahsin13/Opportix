@@ -1,90 +1,93 @@
-# React + Vite
+# Opportix 🧭  
+**Your gateway to opportunity.**
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Opportix is a full-featured job portal designed to connect job seekers with career opportunities and give recruiters the tools they need to find top talent. Built using React.js, Tailwind CSS, Supabase, Clerk, and ShadCN UI — Opportix is fast, scalable, and beautifully designed.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Features
 
-## Expanding the ESLint configuration
+- 🔐 User Authentication – Sign up and log in with Clerk using email or Google  
+- 🧑‍💼 Job Seeker Dashboard – Browse, filter, and apply for jobs  
+- 🏢 Recruiter Portal – Post, edit, and manage job listings with Markdown support  
+- 📄 Resume Uploads – Applicants can upload resumes via Supabase Storage  
+- ✅ Application Tracking – Real-time status updates for applications  
+- 💾 Save Jobs – Bookmark job listings for later  
+- 📰 Blog Section – Career tips, updates, and news  
+- 🎥 Intro Video – Embedded YouTube video on the landing page  
+- 📬 Newsletter Signup UI – Static form with a thank-you message (not yet functional)
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
 
-## 🧠  How It Works::
+## 🛠 Tech Stack
 
-1. Browse Jobs
+- **React.js** – For building the frontend UI  
+- **Tailwind CSS** – Utility-first styling framework  
+- **ShadCN UI** – Prebuilt components styled with Tailwind  
+- **Clerk** – Authentication using email and Google  
+- **Supabase** – Backend for:
+  - Job listings, applications, and blog data  
+  - Resume file uploads via Supabase Storage  
+- **React Hook Form + Zod** – Form handling and validation  
+- **Markdown** – Used for job and blog content  
+- **YouTube Embed** – Regular iframe-based video embed  
+- **Newsletter Form** – Static input field (no backend)
 
-Users land on the homepage and see a list of job postings.
+---
 
-Each job shows the title, company, location, and a short description.
+## ❓ What is Supabase?
 
+Supabase is an open-source Backend-as-a-Service (BaaS) that provides:
 
+- A fully managed PostgreSQL database  
+- Secure file storage  
+- Auto-generated APIs  
+- Optional real-time features and edge functions
 
-2. Search & Filter
+**In Opportix, Supabase is used for:**
 
-Users can search jobs by keywords (e.g., "developer", "marketing").
+- Storing job listings, applications, and blog posts  
+- Uploading and serving resume files
 
-Filter options allow refining results by location, category, or job type.
+---
 
+## 🧠 User Experience Overview
 
+### 👤 For Job Seekers
 
-3. View Job Details
+- Register or log in with Clerk  
+- Browse and filter job listings  
+- Apply to jobs by uploading resumes  
+- Save jobs to revisit or apply later  
+- Watch the intro video on the landing page  
+- Read blog posts for guidance  
+- Enter email in the newsletter form (static)
 
-Clicking on a job opens a detailed view.
+### 🧑‍💼 For Recruiters
 
-Includes full job description, requirements, salary info, and company profile.
+- Log in to access the recruiter dashboard  
+- Create, edit, or delete job posts (Markdown supported)  
+- Review candidate applications and resumes  
+- Optionally post blog content (if admin access is provided)
 
+---
 
+## 🛣️ Future Enhancements
 
-4. Register/Login
+- Social sharing for job posts  
+- Dark/light mode toggle  
+- In-app notifications  
+- Functional newsletter integration
 
-Users create an account or log in with their credentials.
+---
 
-Authentication can be powered by Firebase, custom backend, or local storage (for demo purposes).
+## 🙌 Acknowledgments
 
+Opportix was developed as a modern, full-stack job portal — inspired by web development best practices and extended with custom features, a clean UI, and original branding.
 
+---
 
-5. Apply for a Job
+## 👥 Developed by
 
-After logging in, users can click the “Apply ” button on any job.
-
-Application form pops up or navigates to a page where the user fills in details (resume, cover letter, etc.).
-
-On submit, the application is saved (via API or local storage), and the employer is notified (if backend is used).
-
-
-
-6. Save Jobs
-
-Users can click a ❤️ icon to save jobs to a personal list.
-
-Saved jobs are accessible from the profile/dashboard.
-
-
-
-
-
-## 📝 How People Apply for Jobs
-
-1. Step 1: Go to the job listing page
-
-
-2. Step 2: Click on a job to view full details
-
-
-3. Step 3: Click the “Apply Now” button
-
-
-4. Step 4: If not logged in, user is redirected to login/register
-
-
-5. Step 5: Fill out the application form (e.g., name, email, resume)
-
-
-6. Step 6: Click Submit Application
-
-
-7. Step 7: Success message is shown, and the job is marked as "Applied"
-
-
+- **Nabiha Tahsin** (ID: 222-115-236)  
+- **Juairia Chowdhury** (ID: 222-115-233)
