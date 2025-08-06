@@ -21,7 +21,10 @@
     "@radix-ui/react-slot": "^1.2.3",
     "@supabase/supabase-js": "^2.53.0",
     "@tailwindcss/postcss": "^4.1.11",
+<<<<<<< HEAD
     "@uiw/react-markdown-preview": "^5.1.5",
+=======
+>>>>>>> de2a583ff73bc9037184fbd27d701e3de3b278cd
     "@uiw/react-md-editor": "^4.0.8",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
@@ -32,8 +35,12 @@
     "lucide-react": "^0.525.0",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
+<<<<<<< HEAD
     "react-hook-form": "^7.61.1",
     "react-icons": "^5.5.0",
+=======
+    "react-hook-form": "^7.62.0",
+>>>>>>> de2a583ff73bc9037184fbd27d701e3de3b278cd
     "react-router": "^7.7.0",
     "react-router-dom": "6.26",
     "react-spinners": "^0.17.0",

@@ -52,6 +52,7 @@ const JobPage = () => {
 
   return (
     <div className="flex flex-col gap-8 mt-5">
+      {/* Job Header */}
       <div className="flex flex-col-reverse items-center justify-between gap-6 md:flex-row">
         <h1 className="pb-3 text-4xl font-extrabold gradient-title sm:text-6xl">
           {job?.title}
@@ -59,7 +60,8 @@ const JobPage = () => {
         <img src={job?.company?.logo_url} className="h-12" alt={job?.title} />
       </div>
 
-      <div className="flex justify-between ">
+      {/* Job Details */}
+      <div className="flex justify-between">
         <div className="flex gap-2">
           <MapPinIcon /> {job?.location}
         </div>
@@ -79,15 +81,14 @@ const JobPage = () => {
         </div>
       </div>
 
+      {/* Hiring Status Toggle */}
       {job?.recruiter_id === user?.id && (
         <Select onValueChange={handleStatusChange}>
           <SelectTrigger
             className={`w-full ${job?.isOpen ? "bg-green-950" : "bg-red-950"}`}
           >
             <SelectValue
-              placeholder={
-                "Hiring Status " + (job?.isOpen ? "( Open )" : "( Closed )")
-              }
+              placeholder={`Hiring Status ${job?.isOpen ? "( Open )" : "( Closed )"}`}
             />
           </SelectTrigger>
           <SelectContent>
@@ -97,16 +98,18 @@ const JobPage = () => {
         </Select>
       )}
 
+      {/* About Job */}
       <h2 className="text-2xl font-bold sm:text-3xl">About the job</h2>
       <p className="sm:text-lg">{job?.description}</p>
 
-      <h2 className="text-2xl font-bold sm:text-3xl">
-        What we are looking for
-      </h2>
+      {/* Requirements */}
+      <h2 className="text-2xl font-bold sm:text-3xl">What we are looking for</h2>
       <MDEditor.Markdown
         source={job?.requirements}
-        className="bg-transparent sm:text-lg" // add global ul styles - tutorial
+        className="bg-transparent sm:text-lg"
       />
+
+      {/* Apply Drawer */}
       {job?.recruiter_id !== user?.id && (
         <ApplyJobDrawer
           job={job}
@@ -115,7 +118,10 @@ const JobPage = () => {
           applied={job?.applications?.find((ap) => ap.candidate_id === user.id)}
         />
       )}
+
       {loadingHiringStatus && <BarLoader width={"100%"} color="#36d7b7" />}
+
+      {/* Applications for Recruiter */}
       {job?.applications?.length > 0 && job?.recruiter_id === user?.id && (
         <div className="flex flex-col gap-2">
           <h2 className="mb-4 ml-1 text-xl font-bold">Applications</h2>
