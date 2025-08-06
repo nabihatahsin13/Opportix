@@ -3,7 +3,7 @@
 
 Opportix is a full-featured job portal designed to connect job seekers with career opportunities and give recruiters the tools they need to find top talent. Built using React.js, Tailwind CSS, Supabase, Clerk, and ShadCN UI — Opportix is fast, scalable, and beautifully designed.
 
----
+
 
 ## 🚀 Features
 
@@ -17,7 +17,7 @@ Opportix is a full-featured job portal designed to connect job seekers with care
 - 🎥 Intro Video – Embedded YouTube video on the landing page  
 - 📬 Newsletter Signup UI – Static form with a thank-you message (not yet functional)
 
----
+
 
 ## 🛠 Tech Stack
 
@@ -33,7 +33,6 @@ Opportix is a full-featured job portal designed to connect job seekers with care
 - **YouTube Embed** – Regular iframe-based video embed  
 - **Newsletter Form** – Static input field (no backend)
 
----
 
 ## ❓ What is Supabase?
 
@@ -49,7 +48,7 @@ Supabase is an open-source Backend-as-a-Service (BaaS) that provides:
 - Storing job listings, applications, and blog posts  
 - Uploading and serving resume files
 
----
+
 
 ## 🧠 User Experience Overview
 
@@ -70,7 +69,6 @@ Supabase is an open-source Backend-as-a-Service (BaaS) that provides:
 - Review candidate applications and resumes  
 - Optionally post blog content (if admin access is provided)
 
----
 
 ## 🛣️ Future Enhancements
 
@@ -79,13 +77,11 @@ Supabase is an open-source Backend-as-a-Service (BaaS) that provides:
 - In-app notifications  
 - Functional newsletter integration
 
----
 
 ## 🙌 Acknowledgments
 
 Opportix was developed as a modern, full-stack job portal — inspired by web development best practices and extended with custom features, a clean UI, and original branding.
 
----
 
 ## 👥 Developed by
 
