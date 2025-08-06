@@ -11,7 +11,7 @@ Currently, two official plugins are available:
 
 If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
 
-🧠 ## How It Works
+## 🧠  How It Works::
 
 1. Browse Jobs
 
@@ -47,7 +47,7 @@ Authentication can be powered by Firebase, custom backend, or local storage (for
 
 5. Apply for a Job
 
-After logging in, users can click the “Apply Now” button on any job.
+After logging in, users can click the “Apply ” button on any job.
 
 Application form pops up or navigates to a page where the user fills in details (resume, cover letter, etc.).
 
