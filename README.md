@@ -71,6 +71,71 @@ Supabase is an open-source Backend-as-a-Service (BaaS) that provides:
 - Review candidate applications and resumes  
 - Optionally post blog content (if admin access is provided)
 
+---
+
+## 🛠 Getting Started
+
+Set up Opportix locally in a few quick steps:
+
+### ✅ Requirements
+
+- [Node.js](https://nodejs.org)
+- [Git](https://git-scm.com)
+- [Clerk](https://clerk.dev) (for auth)
+- [Supabase](https://supabase.com) (for backend)
+
+---
+
+### 🚀 Setup
+
+1. **Clone & Install**
+
+```bash
+git clone https://github.com/your-username/opportix.git
+cd opportix
+npm install
+```
+
+2. **Environment Variables**
+
+Create `.env.local` in the root and add:
+
+```env
+# Clerk
+CLERK_PUBLISHABLE_KEY=your_key
+CLERK_SECRET_KEY=your_key
+NEXT_PUBLIC_CLERK_FRONTEND_API=your_api
+
+# Supabase
+NEXT_PUBLIC_SUPABASE_URL=https://your-project.supabase.co
+NEXT_PUBLIC_SUPABASE_ANON_KEY=your_key
+```
+
+3. **Run Dev Server**
+
+```bash
+npm run dev
+```
+
+App will be live at `http://localhost:3000`
+
+---
+
+### 🧪 Quick Test
+
+- Sign in with Clerk  
+- View and apply to jobs  
+- Upload a resume  
+- Try recruiter dashboard (if applicable)
+
+---
+
+### ⚒️ Build for Production
+
+```bash
+npm run build     # Build the app
+npm run start     # Preview the build
+```
 
 ## 🛣️ Future Enhancements
 
