@@ -112,20 +112,20 @@ const LandingPage = () => {
         </Card>
       </section>
 
-      {/* VIDEO SECTION */}
-      <section className="px-4 py-12 mx-4 text-center bg-gray-800 rounded-lg">
-        <h2 className="mb-6 text-3xl font-bold text-white">Learn How Opportix Empowers You</h2>
-        <div className="relative w-full max-w-4xl mx-auto aspect-video">
-          <iframe
-            className="w-full h-full rounded-lg shadow-lg"
-            src="https://www.youtube.com/embed/dQw4w9WgXcQ"
-            title="Opportix Overview Video"
-            frameBorder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowFullScreen
-          />
-        </div>
-      </section>
+     {/* VIDEO SECTION */}
+<section className="px-4 py-12 mx-4 text-center bg-gray-800 rounded-lg">
+  <h2 className="mb-6 text-3xl font-bold text-white">Learn How Opportix Works</h2>
+  <div className="relative w-full max-w-4xl mx-auto aspect-video">
+    <video 
+      className="w-full h-full rounded-lg shadow-lg"
+      controls
+    >
+      <source src="/videos/ProjectDemo.mp4" type="video/mp4" />
+      Your browser does not support the video tag.
+    </video>
+  </div>
+</section>
+
 
       {/* TESTIMONIAL */}
       <section className="p-10 mx-4 text-center bg-gray-900 rounded-xl">
